@@ -1,0 +1,290 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedProduct.title}}</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button routerLink="editproduct"><ion-icon name="create" slot="icon-only"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-buttons slot="primary">
+      <ion-button (click)="presentAlert()"><ion-icon name="trash" slot="icon-only"></ion-icon></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- View CPU -->
+  <ion-grid *ngIf="loadedProduct.type=='CPU'">
+    <ion-row>
+      <ion-col><ion-img [src]="loadedProduct.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1>{{loadedProduct.title}}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Tipe Barang: {{loadedProduct.type}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Merek: {{loadedProduct.brand}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Model: {{loadedProduct.model}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Jumlah Core: {{loadedProduct.corethread}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Base Clock: {{loadedProduct.base}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Boost Clock: {{loadedProduct.boost}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Harga: {{loadedProduct.price}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Stock: {{loadedProduct.stock}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- View RAM -->
+  <ion-grid *ngIf="loadedProduct.type=='RAM'">
+    <ion-row>
+      <ion-col><ion-img [src]="loadedProduct.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1>{{loadedProduct.title}}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Tipe Barang: {{loadedProduct.type}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Merek: {{loadedProduct.brand}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Model: {{loadedProduct.model}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Speed: {{loadedProduct.speed}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Harga: {{loadedProduct.price}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Stock: {{loadedProduct.stock}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+   <!-- View GPU -->
+   <ion-grid *ngIf="loadedProduct.type=='GPU'">
+    <ion-row>
+      <ion-col><ion-img [src]="loadedProduct.imageUrl"></ion-img></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <h1>{{loadedProduct.title}}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Tipe Barang: {{loadedProduct.type}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Merek: {{loadedProduct.brand}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Model: {{loadedProduct.model}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Harga: {{loadedProduct.price}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            Stock: {{loadedProduct.stock}}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+    <!-- View Motherboard -->
+    <ion-grid *ngIf="loadedProduct.type=='Motherboard'">
+      <ion-row>
+        <ion-col><ion-img [src]="loadedProduct.imageUrl"></ion-img></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <h1>{{loadedProduct.title}}</h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Tipe Barang: {{loadedProduct.type}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Merek: {{loadedProduct.brand}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Chipset: {{loadedProduct.chipset}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Supported Processor: {{loadedProduct.for}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Harga: {{loadedProduct.price}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            <ion-item>
+              Stock: {{loadedProduct.stock}}
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-content>

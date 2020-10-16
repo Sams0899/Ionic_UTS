@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Edit Products</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Nama</ion-label>
+        <ion-input type="text" formControlName="title" [(ngModel)]="productDetail.title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Tipe barang</ion-label>
+        <ion-input type="text" formControlName="type"  [(ngModel)]="productDetail.type" readonly></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Foto URL</ion-label>
+        <ion-input type="text" formControlName="url"  [(ngModel)]="productDetail.imageUrl"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Brand</ion-label>
+        <ion-input type="text" formControlName="brand"  [(ngModel)]="productDetail.brand"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Model</ion-label>
+        <ion-input type="text" formControlName="model"  [(ngModel)]="productDetail.model"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input type="number" formControlName="price"  [(ngModel)]="productDetail.price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Stock</ion-label>
+        <ion-input type="number" formControlName="stock"  [(ngModel)]="productDetail.stock"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="presentAlert()"> Edit </ion-button>
+  </form>
+</ion-content>

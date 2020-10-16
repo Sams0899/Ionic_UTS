@@ -1,0 +1,162 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>Add CPU</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">ID</ion-label>
+        <ion-input 
+          type="text"
+          ngModel
+          name="id"
+          #idCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!idCtrl.valid && idCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> ID is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Name</ion-label>
+        <ion-input 
+          type="text"
+          ngModel
+          name="name"
+          #nameCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!nameCtrl.valid && nameCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Name is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Brand</ion-label>
+        <ion-input 
+          type="text"
+          ngModel
+          name="brand"
+          #brandCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!brandCtrl.valid && brandCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Brand required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">BaseClock</ion-label>
+        <ion-input 
+          type="number"
+          ngModel
+          name="baseclock"
+          #clockCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!clockCtrl.valid && clockCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Baseclock is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Boost Clock</ion-label>
+        <ion-input 
+          type="string"
+          ngModel
+          name="boostclock"
+          #boostCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!boostCtrl.valid && boostCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Boostclock is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Model</ion-label>
+        <ion-input 
+          type="text"
+          ngModel
+          name="model"
+          #modelCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!modelCtrl.valid && modelCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Model is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Jumlah Core&Thread</ion-label>
+        <ion-input 
+          type="text"
+          ngModel
+          name="core"
+          #coreCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!coreCtrl.valid && coreCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Field is required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Price</ion-label>
+        <ion-input 
+          type="number"
+          ngModel
+          name="price"
+          #priceCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!priceCtrl.valid && priceCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Price field required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Stock</ion-label>
+        <ion-input 
+          type="number"
+          ngModel
+          name="stock"
+          #stockCtrl="ngModel"
+          required
+        >
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!stockCtrl.valid && stockCtrl.touched">
+        <ion-label style="font-size: 0.7em; color:red;"> Stock field required </ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Image URL</ion-label>
+        <ion-input
+          type="text"
+          ngModel
+          name="imageURL"
+          required
+          #urlCtrl="ngModel">
+        </ion-input>
+        <ion-item *ngIf="!urlCtrl.valid && urlCtrl.touched">
+          <ion-label style="font-size: 0.7em; color:red;"> URL is required </ion-label>
+        </ion-item>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      type="submit"
+      color="primary"
+      (click)="onSubmit()" 
+      [disabled]="!form.valid"
+    >
+      Add New Product
+    </ion-button>
+  </form>
+</ion-content>

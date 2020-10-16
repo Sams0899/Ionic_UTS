@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>Choose Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <ion-list>
+      <ion-item>
+        <ion-select ngModel name="type" placeholder="Select Type" required>
+          <ion-select-option value="CPU">CPU</ion-select-option>
+          <ion-select-option value="RAM">RAM</ion-select-option>
+          <ion-select-option value="GPU">GPU</ion-select-option>
+          <ion-select-option value="Motherboard">Motherboard</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-button
+      type="submit"
+      color="primary"
+      (click)="onSubmit()" 
+      [disabled]="!form.valid"
+    >
+      Choose Product to Add
+    </ion-button>
+  </form>
+</ion-content>
